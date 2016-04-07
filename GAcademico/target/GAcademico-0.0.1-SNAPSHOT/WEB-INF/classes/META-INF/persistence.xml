@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="GAcademico" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+
+		<properties>
+			<!-- Configuração Hibernate SGBD PostgreSQL -->
+			<property name="hibernate.connection.url"
+				value="jdbc:postgresql://localhost:5432/GAcademico" />
+			<property name="hibernate.connection.dialect" value="org.hibernate.dialect.PostgreSQL9" />
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.connection.username" value="postgres" />
+			<property name="hibernate.connection.password" value="postgres" />
+			<property name="hibernate.default_schema" value="public" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- /Configuração Hibernate SGBD PostgreSQL -->
+
+			<!-- Configuração do Pool de conexões -->
+			<!-- DICA: checar conexões ativas no PostgreSQL: SELECT * FROM pg_stat_activity; -->
+			<!-- DICA: checar conexões ativas no MySQL: show processlist; -->
+			<!-- DICA: checar conexões ativas no Oracle: http://dbaforums.org/oracle/index.php?showtopic=16834 -->
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="3000" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="300" />
+			<!-- /Configuração do Pool de conexões -->
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
