@@ -1,11 +1,11 @@
-# GAcademico
+# G-Acadêmico
 
-Projeto G-Acadêmico.
-
-
-Projeto da Disciplina de Desenvolvimento de Aplicações Corporativas do curso de Análise e Desenvolvimento de Sistemas 
-do IFPB - Campus Monteiro. 
+##Projeto G-Acadêmico.
 
 
-Orientações: Prof. Jaindson Valentim
-Desenvolvedor: Gilvonaldo Alves da Silva Cavalcanti
+<p>Projeto da Disciplina de Desenvolvimento de Aplicações Corporativas do curso superior </p>
+<p>em Análise e Desenvolvimento de Sistemas do IFPB - Campus Monteiro. </p>
+
+
+<p><b>Orientações:</b> Prof. Jaindson Valentim</p>
+<p><b>Desenvolvedor:</b> Gilvonaldo Alves da Silva Cavalcanti</p>
