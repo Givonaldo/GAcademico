@@ -86,5 +86,10 @@ public class Aluno implements Serializable {
 		this.disciplinas = disciplinas;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 	
 }

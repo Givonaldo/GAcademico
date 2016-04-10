@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author gilvonaldo
  *
  */
-@Entity
+@Entity(name = "DICIPLINA")
 @Table(name = "TB_DISCIPLINAS")
 @SequenceGenerator(name = "DISCIPLINA_SEQUENCE", sequenceName = "DISCIPLINA_SEQUENCE", allocationSize = 1, initialValue = 1)
 public class Disciplina implements Serializable {
@@ -28,6 +28,9 @@ public class Disciplina implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="DISCIPLINA_SEQUENCE")
 	private Long idDisciplina;
+	
+	@Column(name = "CL_CODIGOS")
+	private String codigo;
 	
 	@ManyToOne
 	private Professor professor;
@@ -41,6 +44,15 @@ public class Disciplina implements Serializable {
 	@ManyToMany(mappedBy = "alunos", cascade = { CascadeType.PERSIST })
 	private List<Aluno> alunos;
 	
+	@Column(name = "CL_NUMEROS_DE_AULAS_PREVISTA")
+	private int numeroAulasPrevisto;
+	
+	@Column(name = "CL_NUMEROS_DE_AULAS_MINISTRADAS")
+	private int numeroAulasMinistradas;
+	 
+	@Column(name = "CL_PERCENTUAL_DE_FREQUENCIA_OBRIGATORIAS")
+	private String percentFrequenciaObrig;
+	 
 	public Long getIdDisciplina() {
 		return idDisciplina;
 	}
@@ -72,6 +84,50 @@ public class Disciplina implements Serializable {
 	public void setAlunos(List<Aluno> alunos) {
 		this.alunos = alunos;
 	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public int getNumeroAulasPrevisto() {
+		return numeroAulasPrevisto;
+	}
+
+	public void setNumeroAulasPrevisto(int numeroAulasPrevisto) {
+		this.numeroAulasPrevisto = numeroAulasPrevisto;
+	}
+
+	public int getNumeroAulasMinistradas() {
+		return numeroAulasMinistradas;
+	}
+
+	public void setNumeroAulasMinistradas(int numeroAulasMinistradas) {
+		this.numeroAulasMinistradas = numeroAulasMinistradas;
+	}
+
+	public String getPercentFrequenciaObrig() {
+		return percentFrequenciaObrig;
+	}
+
+	public void setPercentFrequenciaObrig(String percentFrequenciaObrig) {
+		this.percentFrequenciaObrig = percentFrequenciaObrig;
+	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }

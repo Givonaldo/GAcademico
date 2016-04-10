@@ -6,23 +6,22 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
-import com.gacademico.entities.Periodo;
+
+import com.gacademico.entities.Disciplina;
 
 /**
  * 
  * @author gilvonaldo
  *
  */
-public class PeriodoDAO extends DAO {
-
-	public void save(Periodo periodo) {
-		
+public class DisciplinaDAO extends DAO {
+	
+	public void save(Disciplina disciplina) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		
 		try {
-			em.persist(periodo);
+			em.persist(disciplina);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -32,13 +31,13 @@ public class PeriodoDAO extends DAO {
 		}
 	}
 
-	public Periodo update(Periodo periodo) {
+	public Disciplina update(Disciplina disciplina) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		Periodo resultado = periodo;
+		Disciplina resultado = disciplina;
 		try {
-			resultado = em.merge(periodo);
+			resultado = em.merge(disciplina);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -49,14 +48,13 @@ public class PeriodoDAO extends DAO {
 		return resultado;
 	}
 
-	public void delete(Periodo periodo) {
-		
+	public void delete(Disciplina disciplina) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		try {
-			periodo = em.merge(periodo);
-			em.remove(periodo);
+			disciplina = em.merge(disciplina);
+			em.remove(disciplina);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -66,11 +64,11 @@ public class PeriodoDAO extends DAO {
 		}
 	}
 
-	public Periodo getByID(Long periodoId) {
+	public Disciplina getByID(Long disciplinaId) {
 		EntityManager em = getEntityManager();
-		Periodo resultado = null;
+		Disciplina resultado = null;
 		try {
-			resultado = em.find(Periodo.class, periodoId);
+			resultado = em.find(Disciplina.class, disciplinaId);
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
 		} finally {
@@ -80,12 +78,11 @@ public class PeriodoDAO extends DAO {
 		return resultado;
 	}
 
-	public List<Periodo> getAll() {
-		
+	public List<Disciplina> getAll() {
 		EntityManager em = getEntityManager();
-		List<Periodo> resultado = null;
+		List<Disciplina> resultado = null;
 		try {
-			TypedQuery<Periodo> query = em.createQuery("SELECT a FROM PERIODO a", Periodo.class);
+			TypedQuery<Disciplina> query = em.createQuery("SELECT a FROM DISCIPLINA a", Disciplina.class);
 			resultado = query.getResultList();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -94,5 +91,5 @@ public class PeriodoDAO extends DAO {
 		}
 		return resultado;
 	}
-
+	
 }
