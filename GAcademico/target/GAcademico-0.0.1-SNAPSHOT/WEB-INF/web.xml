@@ -14,7 +14,7 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>*.xhtml</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 	<listener>
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
