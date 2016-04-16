@@ -10,7 +10,7 @@
 	</security-role-mapping>
 	
 	<security-role-mapping>
-        <role-name>VISITANTE</role-name>
-        <group-name>VISITANTE</group-name>
+        <role-name>PROFESSOR</role-name>
+        <group-name>PROFESSOR</group-name>
 	</security-role-mapping>
 </glassfish-web-app>
