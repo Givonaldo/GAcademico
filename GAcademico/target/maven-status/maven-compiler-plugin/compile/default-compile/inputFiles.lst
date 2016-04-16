@@ -6,9 +6,15 @@
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Curso.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/DisciplinaDAO.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Disciplina.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/JPAUtil.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Grupo.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/AdministradorDAO.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/Messages.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Aluno.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/ProfessorDAO.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Periodo.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/User.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/TransacionalCdi.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/TransacionalInterceptor.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/PeriodoDAO.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/AlunoDAO.java
