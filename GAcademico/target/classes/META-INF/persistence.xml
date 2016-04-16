@@ -7,8 +7,9 @@
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<class>com.gacademico.entities.User</class>
 
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
 			<!-- Configuração Hibernate SGBD PostgreSQL -->
