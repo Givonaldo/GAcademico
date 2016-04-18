@@ -8,6 +8,12 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<class>com.gacademico.entities.User</class>
+		<class>com.gacademico.entities.Administrador</class>
+		<class>com.gacademico.entities.Aluno</class>
+		<class>com.gacademico.entities.Curso</class>
+		<class>com.gacademico.entities.Disciplina</class>
+		<class>com.gacademico.entities.Periodo</class>
+		<class>com.gacademico.entities.Professor</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

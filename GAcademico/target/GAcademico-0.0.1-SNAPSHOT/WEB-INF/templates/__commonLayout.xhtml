@@ -8,17 +8,18 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
+	<h:outputStylesheet library="css" name="style.css" />
 	<title><ui:insert name="title">Página principal</ui:insert></title>
 </h:head>
 
 <h:body>
 
 	<ui:debug hotkey="z" />
-	
+
 	<div id="header">
 		<ui:insert name="header">
 			<p:panel columns="1" style="width : 100%; text-align:center">
-				<h:outputLabel value="Gerenciador de Tarefas" />
+				<h:outputLabel value="Sistema Acadêmico" />
 			</p:panel>
 		</ui:insert>
 	</div>
@@ -29,7 +30,7 @@
 
 	<div id="footer">
 		<p:panel columns="1" style="width : 100%; text-align:center">
-			<h:outputLabel value="Gerenciador de Tarefas - v1.0" />
+			<h:outputLabel value="G-Acadêmico - v1.0" />
 		</p:panel>
 	</div>
 
