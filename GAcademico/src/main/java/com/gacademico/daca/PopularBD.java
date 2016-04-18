@@ -8,6 +8,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
+
+import com.gacademico.entities.Disciplina;
 import com.gacademico.entities.Grupo;
 import com.gacademico.entities.User;
 import com.gacademico.services.DacaServiceException;
@@ -30,9 +32,11 @@ public final class PopularBD {
 			tx = em.getTransaction();
 			tx.begin();
 
+			//getDisciplina();
+			
 			List<User> usuarios = new ArrayList<User>();
 
-			usuarios.add(getUsuarioVisitante());
+			usuarios.add(getUsuario());
 			usuarios.add(getUsuarioAdmin());
 
 			for (User user : usuarios) {
@@ -62,6 +66,8 @@ public final class PopularBD {
 
 	}
 
+	
+	
 	private static User getUsuarioAdmin() {
 		User user = new User();
 
@@ -77,7 +83,7 @@ public final class PopularBD {
 		return user;
 	}
 
-	private static User getUsuarioVisitante() {
+	private static User getUsuario() {
 		User user = new User();
 
 		user.setLogin("visitante");
@@ -90,6 +96,16 @@ public final class PopularBD {
 		user.setEmail("visitante@ggmail.com");
 
 		return user;
+	}
+	
+	private static Disciplina getDisciplina() {
+		Disciplina disciplina = new Disciplina();
+
+		disciplina.setCargaHoraria(100);
+		disciplina.setCodigo("DACA");
+		disciplina.setNome("Desenvolvimento de Aplicações Corporativas Avançadas");
+
+		return disciplina;
 	}
 
 }
