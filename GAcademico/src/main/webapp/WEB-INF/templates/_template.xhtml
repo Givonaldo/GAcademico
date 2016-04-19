@@ -5,69 +5,60 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-	<h:head>
-		<title>
-			<ui:insert name="titulo">G-Acadêmico</ui:insert>
-		</title>
-		<h:outputStylesheet library="css" name="style.css"/>
-		<!-- <h:outputScript library="js" name="jquery.maskMoney.js"></h:outputScript> -->		
-	</h:head>
+<h:head>
+	<title><ui:insert name="titulo">G-Acadêmico</ui:insert></title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
 
-	<h:body>
-	
-	<!-- 
-		<p:ajaxStatus styleClass="ajax-status" oncomplete="configuraMoeda()">
-			<f:facet name="start">
-				<h:graphicImage library="imagens" name="loading.gif" />
-			</f:facet>
-			<f:facet name="complete">
-				<h:outputText value="" />
-			</f:facet>
-		</p:ajaxStatus>		
-	 -->
-		<header>
-			<h:graphicImage library="imagens" name="logo.png"/>
-			<div style="float: right; margin-right: 20px; margin-top: 10px">
-				Olá #{usuario.nome}
-			</div>
-		</header>
+<h:body>
 
-		<h:form>
-			<p:menubar style="margin-top: -20px; margin-bottom: 20px">
-				<p:submenu label="Cadastros">
-					<p:menuitem value="Pessoas" action="CadastroPessoa?faces-redirect=true"/>
-					<p:menuitem value="Lançamentos" action="CadastroLancamento?faces-redirect=true"/>
-				</p:submenu>
-				<p:submenu label="Consultas">
-					<p:menuitem value="Pessoas" action="ConsultaPessoas?faces-redirect=true"/>
-					<p:menuitem value="Lançamentos" action="ConsultaLancamentos?faces-redirect=true"/>
-				</p:submenu>
-				<p:submenu label="Sistema">
-					<p:menuitem value="Sair" action="#{loginBean.logout}"/>
-				</p:submenu>
-			</p:menubar>
-		</h:form>
-		
-		<div id="conteudo">
-			<ui:insert name="corpo"/>
-		</div>
-		
-		<footer>
-			G-Acadêmico
-		</footer>
-		
-		<!-- 
-		<script>
-			function configuraMoeda() {
-				$(".moeda").maskMoney({ decimal: ",", thousands: ".", allowZero: true });
-				$(".moeda").maskMoney("mask");
-			}
-			
-			$(document).ready(function() {
-				configuraMoeda();
-			});
-		</script>
-		 -->
-	</h:body>
-	
+	<header>
+		<h:graphicImage library="imagens" name="logo.png" />
+		<div style="float: right; margin-right: 20px; margin-top: 10px">
+			Olá #{index.userService}</div>
+	</header>
+
+	<h:form>
+		<p:menubar style="margin-top: -20px; margin-bottom: 20px">
+			<p:submenu label="Consultas">
+				<p:menuitem value="Aluno" action="#?faces-redirect=true" />
+				<p:menuitem value="Professor" action="#?faces-redirect=true" />
+				<p:menuitem value="Administrador" action="#?faces-redirect=true" />
+			</p:submenu>
+			<p:submenu label="Administração">
+				<p:menuitem value="Cadastrar Aluno" action="#?faces-redirect=true" />
+				<p:menuitem value="Cadastrar Professor"
+					action="#?faces-redirect=true" />
+				<p:menuitem value="Listar Todos" action="#?faces-redirect=true" />
+			</p:submenu>
+			<p:submenu label="Aluno">
+				<p:menuitem value="Boletim" action="#?faces-redirect=true" />
+				<p:menuitem value="Disciplinas" action="#?faces-redirect=true" />
+				<p:menuitem value="Horario Individual"
+					action="#?faces-redirect=true" />
+				<p:menuitem value="Historico" action="#?faces-redirect=true" />
+				<p:menuitem value="Matriz Curricular" action="#?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico"
+					action="#?faces-redirect=true" />
+			</p:submenu>
+			<p:submenu label="Professor">
+				<p:menuitem value="Aulas" action="#?faces-redirect=true" />
+				<p:menuitem value="Disciplinas" action="#?faces-redirect=true" />
+				<p:menuitem value="Matriz Curricular" action="#?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico"
+					action="#?faces-redirect=true" />
+			</p:submenu>
+			<p:submenu label="Sistema">
+				<p:menuitem value="Sair" action="#{logout.efetuarLogout}" />
+			</p:submenu>
+		</p:menubar>
+	</h:form>
+
+	<div id="conteudo">
+		<ui:insert name="corpo" />
+	</div>
+
+	<footer> G-Acadêmico </footer>
+
+</h:body>
 </html>
