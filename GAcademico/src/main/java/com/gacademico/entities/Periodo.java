@@ -23,7 +23,7 @@ public class Periodo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="DISCIPLINA_SEQUENCE")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="PERIODO_SEQUENCE")
 	private Long idPeriodo;
 	
 	@Column(name = "CL_NOMES")

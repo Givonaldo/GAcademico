@@ -84,6 +84,7 @@
 			<description />
 			<role-name>ADMIN</role-name>
 			<role-name>PROFESSOR</role-name>
+			<role-name>ALUNO</role-name>
 		</auth-constraint>
 		<user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
@@ -96,5 +97,8 @@
 	</security-role>
 	<security-role>
 		<role-name>PROFESSOR</role-name>
+	</security-role>
+	<security-role>
+		<role-name>ALUNO</role-name>
 	</security-role>
 </web-app>

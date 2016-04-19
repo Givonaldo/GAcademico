@@ -1,39 +1,73 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head>
-	<h:outputStylesheet library="css" name="style.css" />
-</h:head>
+	<h:head>
+		<title>
+			<ui:insert name="titulo">G-Acadêmico</ui:insert>
+		</title>
+		<h:outputStylesheet library="css" name="style.css"/>
+		<!-- <h:outputScript library="js" name="jquery.maskMoney.js"></h:outputScript> -->		
+	</h:head>
 
-<h:body>
+	<h:body>
+	
+	<!-- 
+		<p:ajaxStatus styleClass="ajax-status" oncomplete="configuraMoeda()">
+			<f:facet name="start">
+				<h:graphicImage library="imagens" name="loading.gif" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>		
+	 -->
+		<header>
+			<h:graphicImage library="imagens" name="logo.png"/>
+			<div style="float: right; margin-right: 20px; margin-top: 10px">
+				Olá #{usuario.nome}
+			</div>
+		</header>
 
-	<!-- TO DO -->
-
-	<ui:debug hotkey="z" />
-
-	<div id="header">
-		<ui:insert name="header">
-			<p:panel columns="1" style="width : 100%; text-align:center">
-				<h:outputLabel value="Sistema Acadêmico" />
-			</p:panel>
-		</ui:insert>
-	</div>
-
-	<div id="content">
-		<ui:insert name="content" />
-	</div>
-
-	<div id="footer">
-		<p:panel columns="1" style="width : 100%; text-align:center">
-			<h:outputLabel value="G-Acadêmico - v1.0" />
-		</p:panel>
-	</div>
-
-</h:body>
+		<h:form>
+			<p:menubar style="margin-top: -20px; margin-bottom: 20px">
+				<p:submenu label="Cadastros">
+					<p:menuitem value="Pessoas" action="CadastroPessoa?faces-redirect=true"/>
+					<p:menuitem value="Lançamentos" action="CadastroLancamento?faces-redirect=true"/>
+				</p:submenu>
+				<p:submenu label="Consultas">
+					<p:menuitem value="Pessoas" action="ConsultaPessoas?faces-redirect=true"/>
+					<p:menuitem value="Lançamentos" action="ConsultaLancamentos?faces-redirect=true"/>
+				</p:submenu>
+				<p:submenu label="Sistema">
+					<p:menuitem value="Sair" action="#{loginBean.logout}"/>
+				</p:submenu>
+			</p:menubar>
+		</h:form>
+		
+		<div id="conteudo">
+			<ui:insert name="corpo"/>
+		</div>
+		
+		<footer>
+			G-Acadêmico
+		</footer>
+		
+		<!-- 
+		<script>
+			function configuraMoeda() {
+				$(".moeda").maskMoney({ decimal: ",", thousands: ".", allowZero: true });
+				$(".moeda").maskMoney("mask");
+			}
+			
+			$(document).ready(function() {
+				configuraMoeda();
+			});
+		</script>
+		 -->
+	</h:body>
+	
 </html>

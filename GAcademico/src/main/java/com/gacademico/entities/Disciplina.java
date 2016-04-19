@@ -41,7 +41,7 @@ public class Disciplina implements Serializable {
 	@Column(name = "CL_CARGAS_HORARIAS")
 	private int cargaHoraria;
 	
-	@ManyToMany(mappedBy = "alunos", cascade = { CascadeType.PERSIST })
+	@ManyToMany(mappedBy = "disciplinas", cascade = { CascadeType.PERSIST })
 	private List<Aluno> alunos;
 	
 	@Column(name = "CL_NUMEROS_DE_AULAS_PREVISTA")
