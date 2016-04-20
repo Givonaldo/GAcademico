@@ -3,7 +3,6 @@ package com.gacademico.entities;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,11 +10,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "TB_USER")
 public class User implements Serializable {
 	
@@ -34,10 +34,6 @@ public class User implements Serializable {
 
 	@Column(name = "EMAIL", nullable = false)
 	private String email;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name = "BIRTHDAY", nullable = false)
-	private Date birthday;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "GRUPO", nullable = false)
@@ -59,14 +55,6 @@ public class User implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthDate) {
-		this.birthday = birthDate;
 	}
 
 	public String getEmail() {
@@ -121,7 +109,6 @@ public class User implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((grupo == null) ? 0 : grupo.hashCode());
@@ -139,11 +126,6 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (birthday == null) {
-			if (other.birthday != null)
-				return false;
-		} else if (!removeTime(birthday).equals(removeTime(other.birthday)))
-			return false;
 		if (email == null) {
 			if (other.email != null)
 				return false;
@@ -169,6 +151,7 @@ public class User implements Serializable {
 		return true;
 	}
 
+	@SuppressWarnings("unused")
 	private Date removeTime(Date date) {    
 	    Calendar cal = Calendar.getInstance();  
 	    cal.setTime(date);  
@@ -181,8 +164,7 @@ public class User implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", birthday=" + birthday + "]";
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 
 }

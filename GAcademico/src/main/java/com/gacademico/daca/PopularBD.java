@@ -1,14 +1,12 @@
 package com.gacademico.daca;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
-
 import com.gacademico.entities.Disciplina;
 import com.gacademico.entities.Grupo;
 import com.gacademico.entities.User;
@@ -64,9 +62,7 @@ public final class PopularBD {
 			}
 		}
 
-	}
-
-	
+	}	
 	
 	private static User getUsuarioAdmin() {
 		User user = new User();
@@ -77,7 +73,6 @@ public final class PopularBD {
 
 		user.setFirstName("Fulano");
 		user.setLastName("Tal");
-		user.setBirthday(new Date());
 		user.setEmail("admin@ggmail.com");
 
 		return user;
@@ -92,12 +87,12 @@ public final class PopularBD {
 
 		user.setFirstName("Sicrano");
 		user.setLastName("Tal");
-		user.setBirthday(new Date());
 		user.setEmail("visitante@ggmail.com");
 
 		return user;
 	}
 	
+	@SuppressWarnings("unused")
 	private static Disciplina getDisciplina() {
 		Disciplina disciplina = new Disciplina();
 

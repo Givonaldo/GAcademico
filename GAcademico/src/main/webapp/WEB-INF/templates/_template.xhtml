@@ -21,13 +21,13 @@
 		<p:menubar style="margin-top: -20px; margin-bottom: 20px">
 		
 			<p:submenu label="Consultas" icon="ui-icon-search">
-				<p:menuitem value="Aluno" icon="ui-icon-triangle-1-se" action="paginaPrincipalAluno?faces-redirect=true" />
-				<p:menuitem value="Professor" icon="ui-icon-triangle-1-se" action="paginaPrincipalProfessor?faces-redirect=true" />
-				<p:menuitem value="Administrador" icon="ui-icon-triangle-1-se" action="paginaPrincipalAdministrador?faces-redirect=true" />
+				<p:menuitem value="Aluno" icon="ui-icon-triangle-1-se" action="/paginas/alunos/paginaPrincipalAluno?faces-redirect=true" />
+				<p:menuitem value="Professor" icon="ui-icon-triangle-1-se" action="/paginas/professores/paginaPrincipalProfessor?faces-redirect=true" />
+				<p:menuitem value="Administrador" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaPrincipalAdministrador?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Administração" icon="ui-icon-person">
-				<p:menuitem value="Cadastrar Usuário" icon="ui-icon-triangle-1-se" action="paginaCadastroDeUsuarios?faces-redirect=true" />
-				<p:menuitem value="Listar Todos" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Cadastrar Usuário" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeUsuarios?faces-redirect=true" />
+				<p:menuitem value="Listar Todos" icon="ui-icon-triangle-1-se" action="/paginas/admin/listarTodos?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Aluno" icon="ui-icon-person">
 				<p:menuitem value="Boletim" icon="ui-icon-triangle-1-se"  action="#?faces-redirect=true" />

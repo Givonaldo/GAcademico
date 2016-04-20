@@ -1,18 +1,14 @@
 package com.gacademico.entities;
 
-import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,17 +18,10 @@ import javax.persistence.Table;
  */
 @Entity(name = "ALUNO")
 @Table(name = "TB_ALUNOS")
-@SequenceGenerator(name = "ALUNO_SEQUENCE", sequenceName = "ALUNO_SEQUENCE", allocationSize = 1, initialValue = 1)
-public class Aluno implements Serializable {
+@DiscriminatorValue("3")
+public class Aluno extends User {
 	
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="ALUNO_SEQUENCE")
-	private Long idAluno;
-	
-	@Column(name = "CL_NOMES")
-	private String nome;
 	
 	@Column(name = "CL_MATRICULAS")
 	private int matricula;
@@ -45,23 +34,7 @@ public class Aluno implements Serializable {
 			   joinColumns = @JoinColumn(name = "DISCIPLINAS_FK"), 
 			   inverseJoinColumns = @JoinColumn(name = "ALUNOS_FK"))
 	private List<Disciplina> disciplinas;
-
-	public Long getIdAluno() {
-		return idAluno;
-	}
-
-	public void setIdAluno(Long idAluno) {
-		this.idAluno = idAluno;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+	
 	public int getMatricula() {
 		return matricula;
 	}

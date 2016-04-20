@@ -1,15 +1,9 @@
 package com.gacademico.entities;
 
-import java.io.Serializable;
 import java.util.List;
-
-import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -19,36 +13,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TB_PROFESSORES")
-@SequenceGenerator(name = "PROFESSOR_SEQUENCE", sequenceName = "PROFESSOR_SEQUENCE", allocationSize = 1, initialValue = 1)
-public class Professor implements Serializable {
+@DiscriminatorValue("2")
+public class Professor extends User {
 
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="PROFESSOR_SEQUENCE")
-	private Long idProfessor;
-	
-	@Column(name = "CL_NOMES")
-	private String nome;
+	private static final long serialVersionUID = 8632718143223729934L;
 	
 	@OneToMany
 	private List<Disciplina> disciplinas;
-
-	public Long getIdProfessor() {
-		return idProfessor;
-	}
-
-	public void setIdProfessor(Long idProfessor) {
-		this.idProfessor = idProfessor;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;

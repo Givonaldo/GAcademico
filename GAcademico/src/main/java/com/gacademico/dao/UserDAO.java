@@ -8,9 +8,6 @@ import com.gacademico.entities.User;
 
 public class UserDAO extends DAO {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7648980817529062236L;
 
 	public void save(User user) throws DacaPersistenciaException {

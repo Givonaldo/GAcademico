@@ -1,11 +1,8 @@
 package com.gacademico.entities;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -15,24 +12,14 @@ import javax.persistence.Table;
  */
 @Entity(name = "ADMINISTRADOR")
 @Table(name = "TB_ADMINISTRADORES")
-@SequenceGenerator(name = "ADMINISTRADOR_SEQUENCE", sequenceName = "ADMINISTRADOR_SEQUENCE", allocationSize = 1, initialValue = 1)
-public class Administrador {
+@DiscriminatorValue("1")
+public class Administrador extends User {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="ADMINISTRADOR_SEQUENCE")
-	private Long idAdministrador;
-	
+	private static final long serialVersionUID = -6252787393819732009L;
+
 	@Column(name = "CL_NOMES")
 	private String nome;
-
-	public Long getIdAdministrador() {
-		return idAdministrador;
-	}
-
-	public void setIdAdministrador(Long idAdministrador) {
-		this.idAdministrador = idAdministrador;
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
