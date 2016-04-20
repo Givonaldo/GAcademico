@@ -10,10 +10,40 @@
 
 <ui:composition template="/WEB-INF/templates/__commonLayout.xhtml">
 
-	<ui:define name="title">
-			G-ACADEMICO
-	</ui:define>
+	<f:metadata>
+		<o:viewParam name="id" value="#{#.pessoa}" />
+	</f:metadata>
 
+	<ui:define name="titulo">Cadastro de Pessoas</ui:define>
+
+	<ui:define name="corpo">
+
+		<h1>Cadastro de Pessoas</h1>
+
+		<h:form>
+			<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+
+			<p:panelGrid columns="2">
+
+				<p:outputLabel value="Nome" for="nome" />
+				<p:inputText id="nome" value="#{#}" />
+
+				<f:facet name="footer">
+					<p:row>
+						<p:column>
+							<h:panelGroup style="float: right; padding: 3px">
+								<p:commandButton value="Salvar" icon="ui-icon-disk"
+									action="#{#}" update="@form" />
+							</h:panelGroup>
+						</p:column>
+					</p:row>
+				</f:facet>
+
+			</p:panelGrid>
+
+		</h:form>
+
+	</ui:define>
 </ui:composition>
 
 </html>

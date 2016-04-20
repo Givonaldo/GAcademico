@@ -35,7 +35,7 @@
 		https://docs.oracle.com/javaee/7/tutorial/security-webtier002.htm#JEETT01227 
 		-->
 		<auth-method>FORM</auth-method>
-		<realm-name>gacademicoJdbc</realm-name>
+		<realm-name>dacaJdbcRealm</realm-name>
 		<form-login-config>
 			<form-login-page>/paginas/login.xhtml</form-login-page>
 			<form-error-page>/paginas/login_error.xhtml</form-error-page>
@@ -47,6 +47,8 @@
 			<web-resource-name>Área protegida do administrador</web-resource-name>
 			<description></description>
 			<url-pattern>/paginas/admin/*</url-pattern>
+			<url-pattern>/paginas/alunos/*</url-pattern>
+			<url-pattern>/paginas/professores/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 			<http-method>HEAD</http-method>

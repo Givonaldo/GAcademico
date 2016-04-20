@@ -1,7 +1,6 @@
 package com.gacademico.beans;
 
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -14,9 +13,6 @@ import com.gacademico.services.UserService;
 @RequestScoped
 public class Index extends AbstractBean {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4341438765228072955L;
 
 	private List<User> users;
