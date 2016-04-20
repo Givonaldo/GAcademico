@@ -8,10 +8,9 @@
 	xmlns:of="http://omnifaces.org/functions"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="/WEB-INF/templates/__commonLayout.xhtml">
-
+<ui:composition template="/WEB-INF/templates/_template.xhtml">
 	<f:metadata>
-		<o:viewParam name="id" value="#{#.pessoa}" />
+		<!-- o:viewParam name="id" value="#{#}" /-->
 	</f:metadata>
 
 	<ui:define name="titulo">Cadastro de Pessoas</ui:define>
@@ -44,6 +43,7 @@
 		</h:form>
 
 	</ui:define>
+	
 </ui:composition>
 
 </html>

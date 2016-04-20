@@ -18,10 +18,11 @@
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Grupo.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Aluno.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/Messages.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/MenuView.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/daca/PopularBD.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/User.java
-/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/UserDAO.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/DacaPersistenciaException.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/UserDAO.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/daca/DacaException.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/util/TransacionalInterceptor.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/EnderecoPaginas.java

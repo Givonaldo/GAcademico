@@ -19,34 +19,32 @@
 
 	<h:form>
 		<p:menubar style="margin-top: -20px; margin-bottom: 20px">
-			<p:submenu label="Consultas">
-				<p:menuitem value="Aluno" action="paginaPrincipalAluno?faces-redirect=true" />
-				<p:menuitem value="Professor" action="paginaPrincipalProfessor?faces-redirect=true" />
-				<p:menuitem value="Administrador" action="paginaPrincipalAdministrador?faces-redirect=true" />
+		
+			<p:submenu label="Consultas" icon="ui-icon-search">
+				<p:menuitem value="Aluno" icon="ui-icon-triangle-1-se" action="paginaPrincipalAluno?faces-redirect=true" />
+				<p:menuitem value="Professor" icon="ui-icon-triangle-1-se" action="paginaPrincipalProfessor?faces-redirect=true" />
+				<p:menuitem value="Administrador" icon="ui-icon-triangle-1-se" action="paginaPrincipalAdministrador?faces-redirect=true" />
 			</p:submenu>
-			<p:submenu label="Administração">
-				<p:menuitem value="Cadastrar Usuário" action="paginaCadastroDeUsuarios?faces-redirect=true" />
-				<p:menuitem value="Listar Todos" action="#?faces-redirect=true" />
+			<p:submenu label="Administração" icon="ui-icon-person">
+				<p:menuitem value="Cadastrar Usuário" icon="ui-icon-triangle-1-se" action="paginaCadastroDeUsuarios?faces-redirect=true" />
+				<p:menuitem value="Listar Todos" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
 			</p:submenu>
-			<p:submenu label="Aluno">
-				<p:menuitem value="Boletim" action="#?faces-redirect=true" />
-				<p:menuitem value="Disciplinas" action="#?faces-redirect=true" />
-				<p:menuitem value="Horario Individual"
-					action="#?faces-redirect=true" />
-				<p:menuitem value="Historico" action="#?faces-redirect=true" />
-				<p:menuitem value="Matriz Curricular" action="#?faces-redirect=true" />
-				<p:menuitem value="Calendário Acadêmico"
-					action="#?faces-redirect=true" />
+			<p:submenu label="Aluno" icon="ui-icon-person">
+				<p:menuitem value="Boletim" icon="ui-icon-triangle-1-se"  action="#?faces-redirect=true" />
+				<p:menuitem value="Disciplinas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Horario Individual" icon="ui-icon-triangle-1-se"	action="#?faces-redirect=true" />
+				<p:menuitem value="Historico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
 			</p:submenu>
-			<p:submenu label="Professor">
-				<p:menuitem value="Aulas" action="#?faces-redirect=true" />
-				<p:menuitem value="Disciplinas" action="#?faces-redirect=true" />
-				<p:menuitem value="Matriz Curricular" action="#?faces-redirect=true" />
-				<p:menuitem value="Calendário Acadêmico"
-					action="#?faces-redirect=true" />
+			<p:submenu label="Professor" icon="ui-icon-person">
+				<p:menuitem value="Aulas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Disciplinas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
 			</p:submenu>
-			<p:submenu label="Sistema">
-				<p:menuitem value="Sair" action="#{logout.efetuarLogout}" />
+			<p:submenu label="Sistema" icon="ui-icon-gear">
+				<p:menuitem value="Sair" icon="ui-icon-power" action="#{logout.efetuarLogout}" />
 			</p:submenu>
 		</p:menubar>
 	</h:form>
