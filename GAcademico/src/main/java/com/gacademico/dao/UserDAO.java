@@ -13,6 +13,7 @@ public class UserDAO extends DAO {
 	public void save(User user) throws DacaPersistenciaException {
 		EntityManager em = getEntityManager();
 		try {
+			System.out.println(user);
 			em.persist(user);
 		} catch (PersistenceException pe) {
 			throw new DacaPersistenciaException("Ocorreu algum problema ao tentar salvar o usuário.", pe);

@@ -16,53 +16,60 @@
 	<ui:define name="titulo">Cadastro de Usuários</ui:define>
 
 	<ui:define name="corpo">
-		
+
 		<p:messages autoUpdate="true" />
-		
-		<h1>Cadastro de Usuários</h1>
 
 		<h:form>
+
 			<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
 
-			<p:panelGrid columns="2">
+			<p:panel header="Cadastrar Usuário"
+				style="width: 30%; text-align:center; margin: auto;">
 
-				<p:outputLabel value="Primeiro Nome" for="primeiroNome" />
-				<p:inputText id="primeiroNome" value="#{cadastroDeUsuariosBean.primeiroNome}" required="true" cols="40" rows="4"
-					autoResize="false"/>
+				<p:panelGrid columns="2">
 
-				<p:outputLabel value="Sobrenome" for="sobrenome" />
-				<p:inputText id="sobrenome" value="#{cadastroDeUsuariosBean.segundoNome}" required="true" cols="40" rows="4"
-					autoResize="false"/>
+					<p:outputLabel value="Primeiro Nome" for="primeiroNome" />
+					<p:inputText id="primeiroNome"
+						value="#{cadastroDeUsuariosBean.primeiroNome}" required="true"
+						cols="40" rows="4" autoResize="false" />
 
-				<p:outputLabel value="E-Mail" for="email" />
-				<p:inputText id="email" value="#{cadastroDeUsuariosBean.email}" required="true" cols="40" rows="4"
-					autoResize="false"/>
+					<p:outputLabel value="Sobrenome" for="sobrenome" />
+					<p:inputText id="sobrenome"
+						value="#{cadastroDeUsuariosBean.segundoNome}" required="true"
+						cols="40" rows="4" autoResize="false" />
 
-				<h:outputText value="Grupo:" />
-				<p:selectOneButton value="#{cadastroDeUsuariosBean.grupo}" required="true" >
-					<f:selectItem itemLabel="Administrador" itemValue="Administrador" />
-					<f:selectItem itemLabel="Professor" itemValue="Professor" />
-					<f:selectItem itemLabel="Aluno" itemValue="Aluno" />
-				</p:selectOneButton>
+					<p:outputLabel value="E-Mail" for="email" />
+					<p:inputText id="email" value="#{cadastroDeUsuariosBean.email}"
+						required="true" cols="40" rows="4" autoResize="false" />
 
-				<p:outputLabel value="Login" for="login" />
-				<p:inputText id="login" value="#{cadastroDeUsuariosBean.login}" required="true" cols="40" rows="4"
-					autoResize="false"/>
+					<h:outputText value="Grupo:" />
+					<p:selectOneButton value="#{cadastroDeUsuariosBean.grupo}"
+						required="true">
+						<f:selectItem itemLabel="Administrador" itemValue="Administrador" />
+						<f:selectItem itemLabel="Professor" itemValue="Professor" />
+						<f:selectItem itemLabel="Aluno" itemValue="Aluno" />
+					</p:selectOneButton>
 
-				<p:outputLabel value="Senha" for="senha" />
-				<p:inputText id="senha" value="#{cadastroDeUsuariosBean.senha}" required="true" cols="40" rows="4"
-					autoResize="false"/>
+					<p:outputLabel value="Login" for="login" />
+					<p:inputText id="login" value="#{cadastroDeUsuariosBean.login}"
+						required="true" cols="40" rows="4" autoResize="false" />
 
-				<f:facet name="footer">
-					<p:commandButton id="submit" action="#{cadastroDeUsuariosBean.salvarUsuario}"
-						value="Submit" icon="ui-icon-disk" ajax="false" />
+					<p:outputLabel value="Senha" for="senha" />
+					<p:inputText id="senha" value="#{cadastroDeUsuariosBean.senha}"
+						required="true" cols="40" rows="4" autoResize="false" />
 
-					<p:button id="cancelar" outcome="/paginas/index.xhtml" value="Cancelar"
-						icon="ui-icon-cancel" />
+					<f:facet name="footer">
+						<p:commandButton id="submit"
+							action="#{cadastroDeUsuariosBean.salvarUsuario}" value="Submit"
+							icon="ui-icon-disk" />
 
-				</f:facet>
+						<p:button id="cancelar" outcome="/paginas/index.xhtml"
+							value="Cancelar" icon="ui-icon-cancel" />
 
-			</p:panelGrid>
+					</f:facet>
+
+				</p:panelGrid>
+			</p:panel>
 		</h:form>
 	</ui:define>
 </ui:composition>
