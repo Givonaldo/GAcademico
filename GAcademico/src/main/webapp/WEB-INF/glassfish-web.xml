@@ -13,4 +13,10 @@
         <role-name>PROFESSOR</role-name>
         <group-name>PROFESSOR</group-name>
 	</security-role-mapping>
+	
+	<security-role-mapping>
+        <role-name>ALUNO</role-name>
+        <group-name>ALUNO</group-name>
+	</security-role-mapping>
+	
 </glassfish-web-app>
