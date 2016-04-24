@@ -10,7 +10,7 @@ public class UserDAO extends DAO {
 
 	private static final long serialVersionUID = 7648980817529062236L;
 
-	public void save(User user) throws DacaPersistenciaException {
+	public void save(Object user) throws DacaPersistenciaException {
 		EntityManager em = getEntityManager();
 		try {
 			System.out.println(user);
@@ -20,9 +20,9 @@ public class UserDAO extends DAO {
 		}
 	}
 
-	public User update(User user) throws DacaPersistenciaException {
+	public Object update(Object user) throws DacaPersistenciaException {
 		EntityManager em = getEntityManager();
-		User resultado = user;
+		Object resultado = user;
 		try {
 			resultado = em.merge(user);
 		} catch (PersistenceException pe) {

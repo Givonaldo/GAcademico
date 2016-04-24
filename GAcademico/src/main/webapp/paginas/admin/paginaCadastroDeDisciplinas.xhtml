@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/_template.xhtml">
+	<f:metadata>
+		<!-- o:viewParam name="id" value="#{#}" /-->
+	</f:metadata>
+
+	<ui:define name="titulo">Cadastro de Disciplinas</ui:define>
+
+	<ui:define name="content">
+
+		<p:messages autoUpdate="true" />
+
+		<h:form>
+
+			<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+
+			<p:panel header="Cadastrar Disciplina"
+				style="width: 30%; text-align:center; margin: auto;">
+
+				<p:panelGrid columns="2">
+
+					<p:outputLabel value="Código" for="codigo" />
+					<p:inputText id="codigo"
+						value="#{cadastroDeDisciplinaBean.disciplina.codigo}" required="true"
+						cols="40" rows="4" autoResize="false" />
+
+					<p:outputLabel value="Nome" for="nome" />
+					<p:inputText id="nome"
+						value="#{cadastroDeDisciplinaBean.disciplina.nome}" required="true"
+						cols="40" rows="4" autoResize="false" />
+
+					<p:outputLabel value="Carga Horária" for="cargaHoraria" />
+					<p:inputText id="cargahoraria" value="#{cadastroDeDisciplinaBean.disciplina.cargaHoraria}"
+						required="true" cols="40" rows="4" autoResize="false" />
+
+					<f:facet name="footer">
+						<p:commandButton id="submit"
+							action="#{cadastroDeDisciplinaBean.salvarDisciplina}" value="Submit"
+							icon="ui-icon-disk" />
+
+						<p:button id="cancelar" outcome="/paginas/index.xhtml"
+							value="Cancelar" icon="ui-icon-cancel" />
+
+					</f:facet>
+
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

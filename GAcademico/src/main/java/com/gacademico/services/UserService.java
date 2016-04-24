@@ -24,7 +24,7 @@ public class UserService implements Serializable {
 	private UserDAO userDAO;
 	
 	@TransacionalCdi
-	public void save(User user) throws DacaServiceException {
+	public void save(Object user) throws DacaServiceException {
 		try {
 			this.userDAO.save(user);
 		} catch (DacaPersistenciaException e) {
@@ -33,7 +33,7 @@ public class UserService implements Serializable {
 	}
 	
 	@TransacionalCdi
-	public User update(User user) throws DacaServiceException {
+	public Object update(Object user) throws DacaServiceException {
 		try {
 			return this.userDAO.update(user);
 		} catch (DacaPersistenciaException e) {
