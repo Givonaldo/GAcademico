@@ -11,6 +11,7 @@ import com.gacademico.entities.Disciplina;
 import com.gacademico.entities.Grupo;
 import com.gacademico.entities.User;
 import com.gacademico.services.DacaServiceException;
+import com.gacademico.services.DisciplinaService;
 import com.gacademico.services.UserService;
 
 public final class PopularBD {
@@ -21,27 +22,38 @@ public final class PopularBD {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 		UserService userService = null;
-
+		
+		DisciplinaService disciplinaService = null;
+		
 		try {
 			emf = Persistence.createEntityManagerFactory("GAcademico");
 			em = emf.createEntityManager();
 			userService = new UserService();
 
+			disciplinaService = new DisciplinaService();
+			
 			tx = em.getTransaction();
 			tx.begin();
 
 			//getDisciplina();
 			
 			List<User> usuarios = new ArrayList<User>();
-
+			List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+			
 			usuarios.add(getUsuario());
 			usuarios.add(getUsuarioAdmin());
 
+			disciplinas.add(getDisciplina());
+			
 			for (User user : usuarios) {
 				userService.criptografarSenha(user);
 				em.persist(user);
 			}
-
+			
+			for (Disciplina d : disciplinas){
+				em.persist(d);
+			}
+			
 			tx.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -92,7 +104,6 @@ public final class PopularBD {
 		return user;
 	}
 	
-	@SuppressWarnings("unused")
 	private static Disciplina getDisciplina() {
 		Disciplina disciplina = new Disciplina();
 

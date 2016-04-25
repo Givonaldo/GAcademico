@@ -5,21 +5,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
-import com.gacademico.entities.Disciplina;
+import com.gacademico.entities.Curso;
 
-/**
- * 
- * @author gilvonaldo
- *
- */
-public class DisciplinaDAO extends DAO {
-	
-	public void save(Disciplina disciplina) {
+public class CursoDAO extends DAO {
+
+	public void save(Curso curso) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		try {
-			em.persist(disciplina);
+			em.persist(curso);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -29,13 +24,13 @@ public class DisciplinaDAO extends DAO {
 		}
 	}
 
-	public Disciplina update(Disciplina disciplina) {
+	public Curso update(Curso curso) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		Disciplina resultado = disciplina;
+		Curso resultado = curso;
 		try {
-			resultado = em.merge(disciplina);
+			resultado = em.merge(curso);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -46,13 +41,13 @@ public class DisciplinaDAO extends DAO {
 		return resultado;
 	}
 
-	public void delete(Disciplina disciplina) {
+	public void delete(Curso curso) {
 		EntityManager em = getEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		try {
-			disciplina = em.merge(disciplina);
-			em.remove(disciplina);
+			curso = em.merge(curso);
+			em.remove(curso);
 			transaction.commit();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -62,11 +57,11 @@ public class DisciplinaDAO extends DAO {
 		}
 	}
 
-	public Disciplina getByID(Long disciplinaId) {
+	public Curso getByID(Long cursoId) {
 		EntityManager em = getEntityManager();
-		Disciplina resultado = null;
+		Curso resultado = null;
 		try {
-			resultado = em.find(Disciplina.class, disciplinaId);
+			resultado = em.find(Curso.class, cursoId);
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
 		} finally {
@@ -76,11 +71,11 @@ public class DisciplinaDAO extends DAO {
 		return resultado;
 	}
 
-	public List<Disciplina> getAll() {
+	public List<Curso> getAll() {
 		EntityManager em = getEntityManager();
-		List<Disciplina> resultado = null;
+		List<Curso> resultado = null;
 		try {
-			TypedQuery<Disciplina> query = em.createQuery("SELECT a FROM DISCIPLINA a", Disciplina.class);
+			TypedQuery<Curso> query = em.createQuery("SELECT a FROM CURSO a", Curso.class);
 			resultado = query.getResultList();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
@@ -90,15 +85,15 @@ public class DisciplinaDAO extends DAO {
 		return resultado;
 	}
 
-	public List<Disciplina> findUserByFirstName(String nome) throws DacaPersistenciaException {
+	public List<Curso> findUserByFirstName(String nome) throws DacaPersistenciaException {
 		EntityManager em = getEntityManager();
-		List<Disciplina> resultado = null;
+		List<Curso> resultado = null;
 		if (nome == null) {
 			nome = "";
 		}
 		try {
-			TypedQuery<Disciplina> query = em.createQuery("select u from Disciplina u where u.nome like :nome",
-					Disciplina.class);
+			TypedQuery<Curso> query = em.createQuery("select u from CURSO u where u.nome like :nome",
+					Curso.class);
 			query.setParameter("nome", "%" + nome + "%");
 			resultado = query.getResultList();
 		} catch (PersistenceException pe) {
@@ -107,5 +102,6 @@ public class DisciplinaDAO extends DAO {
 
 		return resultado;
 	}
+
 	
 }

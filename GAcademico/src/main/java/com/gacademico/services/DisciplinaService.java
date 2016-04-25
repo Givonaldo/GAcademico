@@ -3,6 +3,7 @@ package com.gacademico.services;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Inject;
+import com.gacademico.dao.DacaPersistenciaException;
 import com.gacademico.dao.DisciplinaDAO;
 import com.gacademico.entities.Disciplina;
 import com.gacademico.util.TransacionalCdi;
@@ -41,6 +42,14 @@ public class DisciplinaService implements Serializable {
 	
 	public List<Disciplina> getAll() throws DacaServiceException {
 		return this.disciplinaDAO.getAll();
+	}
+	
+	public List<Disciplina> findUserByFirstName(String firstName) throws DacaServiceException {
+		try {
+			return this.disciplinaDAO.findUserByFirstName(firstName);
+		} catch (DacaPersistenciaException e) {
+			throw new DacaServiceException(e.getMessage(), e);
+		}
 	}
 	
 }

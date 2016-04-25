@@ -5,45 +5,26 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import com.gacademico.entities.Aluno;
 import com.gacademico.entities.Disciplina;
-import com.gacademico.entities.Professor;
-import com.gacademico.entities.User;
 import com.gacademico.services.DacaServiceException;
 import com.gacademico.services.DisciplinaService;
-import com.gacademico.services.ProfessorService;
-import com.gacademico.services.UserService;
 
 @Named
 @RequestScoped
-public class Index extends AbstractBean {
-	
-	private static final long serialVersionUID = -4341438765228072955L;
+public class BuscarDisciplinasBean extends AbstractBean {
 
-	private List<User> users;
-	
-	private List<Professor> professores;
-	private List<Aluno> alunos;
-	
-	@Inject
-	private UserService userService;
-	
-	@Inject
-	private ProfessorService professorService;
+	private static final long serialVersionUID = 189144881821704268L;
+
+	private List<Disciplina> disciplinas;
 	
 	private String firstNameFiltro;
 	
+	@Inject
+	private DisciplinaService disciplinaService;
 	
-	public List<User> getUsers() {
-		return users;
+	public List<Disciplina> getDisciplina() {
+		return disciplinas;
 	}
-	
-	public List<Professor> getProfessores() {
-		return professores;
-	}
-	
-	
 	
 	public String getFirstNameFiltro() {
 		return firstNameFiltro;
@@ -60,14 +41,16 @@ public class Index extends AbstractBean {
 	
 	public void filtrar() {
 		try {
-			users = userService.findUserByFirstName(firstNameFiltro);
+			disciplinas = disciplinaService.findUserByFirstName(firstNameFiltro);
 		} catch (DacaServiceException e) {
-			reportarMensagemDeErro(e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	public void limpar() {
 		firstNameFiltro = null;
 	}
+
 	
 }
