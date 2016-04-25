@@ -1,10 +1,12 @@
 package com.gacademico.beans;
 
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import com.gacademico.entities.Disciplina;
+import com.gacademico.entities.Professor;
 import com.gacademico.services.DacaServiceException;
 import com.gacademico.services.DisciplinaService;
 import com.gacademico.services.ProfessorService;
@@ -18,10 +20,12 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 	@Inject
 	private DisciplinaService serviceDisciplina;
 	
+	private List<Professor> professores; 
+	
 	@Inject
 	private ProfessorService serviceProfessor;
 
-	
+	private Professor professor;
 	
 	private Disciplina disciplina;
 
@@ -29,17 +33,22 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 	public void initDisciplina() {
 
 		this.disciplina = new Disciplina();
-		
-		//TO DO...
+		this.professor = new Professor();
+		try {
+			professores = serviceProfessor.getAll();
+		} catch (DacaServiceException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
-	public void salvarDisciplina() {
+	public String salvarDisciplina() {
 		try {
 			serviceDisciplina.save(this.disciplina);
 		} catch (DacaServiceException e) {
 			e.printStackTrace();
 		}
+		return EnderecoPaginas.PAGINA_PRINCIPAL;
 	}
 
 	public void setDisciplina(Disciplina disciplina) {
@@ -48,6 +57,18 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 	
 	public Disciplina getDisciplina() {
 		return disciplina;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+	
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+	
+	public Professor getProfessor() {
+		return professor;
 	}
 	
 }

@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @author gilvonaldo
  *
  */
-@Entity
+@Entity(name = "PROFESSOR")
 @Table(name = "TB_PROFESSORES")
 @DiscriminatorValue("2")
 public class Professor extends User {

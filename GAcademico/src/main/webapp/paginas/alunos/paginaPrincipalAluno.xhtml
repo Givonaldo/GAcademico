@@ -68,12 +68,6 @@
 				<p:column headerText="Email">
 					<h:outputText value="#{user.email}" />
 				</p:column>
-
-				<p:column headerText="Birthday">
-					<h:outputText value="#{user.birthday}">
-						<f:convertDateTime pattern="dd-MM-yyyy" />
-					</h:outputText>
-				</p:column>
 				
 				<p:column headerText="Grupo">
 					<h:outputText value="#{user.grupo}" />
@@ -92,9 +86,7 @@
 				</p:column>
 			</p:dataTable>
 		</p:fieldset>
-	</ui:define>
-	
-	
+	</ui:define>	
 
 </ui:composition>
 

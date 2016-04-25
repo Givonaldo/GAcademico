@@ -20,16 +20,13 @@
 		<div id="tabela">
 			<p:messages id="messages" />
 
-			<p:commandButton value="Adicionar Usuário"
-				action="/paginas/admin/paginaCadastroDeUsuarios.xhtml" />
-
 			<br />
 
 			<p:dataTable id="tabela" var="administrador" value="#{index.users}"
 				emptyMessage="Nenhum registro encontrado.">
 
 				<p:column>
-					<f:facet name="header">ID</f:facet>
+					<f:facet name="header">Identificador</f:facet>
 					<p:outputLabel value="#{administrador.id}" />
 				</p:column>
 
@@ -56,7 +53,7 @@
 				<p:column>
 					<f:facet name="header">Editar</f:facet>
 					<p:link outcome="editarAdministrador.xhtml"
-						value="Editar Administrador">
+						value="Editar">
 						<f:param name="administrador" value="#{tarefa.id}" />
 					</p:link>
 				</p:column>
@@ -64,7 +61,7 @@
 				<p:column>
 					<f:facet name="header">Deletar</f:facet>
 					<p:link outcome="removeAdministrador.xhtml"
-						value="Deletar Administrador">
+						value="Deletar">
 						<f:param name="administrador" value="#{tarefa.id}" />
 					</p:link>
 				</p:column>
