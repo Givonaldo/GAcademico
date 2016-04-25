@@ -15,16 +15,13 @@ import com.gacademico.util.TransacionalCdi;
 
 public class UserService implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8086449267296650848L;
 	
 	@Inject
 	private UserDAO userDAO;
 	
 	@TransacionalCdi
-	public void save(Object user) throws DacaServiceException {
+	public void save(User user) throws DacaServiceException {
 		try {
 			this.userDAO.save(user);
 		} catch (DacaPersistenciaException e) {
@@ -33,7 +30,7 @@ public class UserService implements Serializable {
 	}
 	
 	@TransacionalCdi
-	public Object update(Object user) throws DacaServiceException {
+	public User update(User user) throws DacaServiceException {
 		try {
 			return this.userDAO.update(user);
 		} catch (DacaPersistenciaException e) {

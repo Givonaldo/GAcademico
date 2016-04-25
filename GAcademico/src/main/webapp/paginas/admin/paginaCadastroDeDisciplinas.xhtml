@@ -38,9 +38,15 @@
 						value="#{cadastroDeDisciplinaBean.disciplina.nome}" required="true"
 						cols="40" rows="4" autoResize="false" />
 
-					<p:outputLabel value="Carga Horária" for="cargaHoraria" />
+					<p:outputLabel value="Carga Horária" for="cargahoraria" />
 					<p:inputText id="cargahoraria" value="#{cadastroDeDisciplinaBean.disciplina.cargaHoraria}"
 						required="true" cols="40" rows="4" autoResize="false" />
+
+					<p:selectOneMenu id="professor" value="#{}"> 
+					
+						
+					
+					</p:selectOneMenu>
 
 					<f:facet name="footer">
 						<p:commandButton id="submit"

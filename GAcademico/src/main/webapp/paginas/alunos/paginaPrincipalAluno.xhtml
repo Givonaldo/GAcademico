@@ -10,7 +10,14 @@
 
 <ui:composition template="/WEB-INF/templates/_template.xhtml">
 
+	<ui:define name="title">
+		Alunos Cadastrados
+	</ui:define>
+
 	<ui:define name="content">
+		
+		<p:messages closable="true" showDetail="true" id="messages" />
+	
 		<p:panel header="G-Acadêmico"
 			style="width: 30%; text-align:center; margin: auto;">
 			<div>
@@ -22,7 +29,72 @@
 					poucos cliques.</h3>
 			</div>
 		</p:panel>
+
+		<p:fieldset legend="Filtro">
+			<h:form id="formFiltro">
+				<h:outputText value="Nome do Usuário: " />
+				<p:inputText id="itNomeFiltro" value="#{index.firstNameFiltro}"
+					style="width:350px" />
+
+				<p:commandButton id="btnFiltrarBotao" value="Filtrar"
+					action="#{index.filtrar}"
+					update=":dtTabelaUsuarios" />
+				<p:commandButton id="btnLimparBotao" value="Limpar"
+					action="#{index.limpar}" update="formFiltro" process="@this">
+					<p:resetInput target="formFiltro" />
+				</p:commandButton>
+
+			</h:form>
+		</p:fieldset>
+		<p:fieldset legend="Resultado">
+			<p:dataTable id="dtTabelaUsuarios" var="user" value="#{index.users}"
+				emptyMessage="Nenhum registro encontrado.">
+				<p:column headerText="ID">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+				
+				<p:column headerText="Login">
+					<h:outputText value="#{user.login}" />
+				</p:column>
+
+				<p:column headerText="First name">
+					<h:outputText value="#{user.firstName}" />
+				</p:column>
+
+				<p:column headerText="Last name">
+					<h:outputText value="#{user.lastName}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{user.email}" />
+				</p:column>
+
+				<p:column headerText="Birthday">
+					<h:outputText value="#{user.birthday}">
+						<f:convertDateTime pattern="dd-MM-yyyy" />
+					</h:outputText>
+				</p:column>
+				
+				<p:column headerText="Grupo">
+					<h:outputText value="#{user.grupo}" />
+				</p:column>
+				
+				<p:column headerText="Edit">
+					<p:link id="linkEditUser" outcome="/paginas/admin/user_edit.xhtml" value="Edit user">
+						<f:param name="user" value="#{user.id}" />
+					</p:link>
+				</p:column>
+
+				<p:column headerText="Delete">
+					<p:link id="linkDeleteUser" outcome="/paginas/admin/user_delete.xhtml" value="Delete user">
+						<f:param name="user" value="#{user.id}" />
+					</p:link>
+				</p:column>
+			</p:dataTable>
+		</p:fieldset>
 	</ui:define>
+	
+	
 
 </ui:composition>
 

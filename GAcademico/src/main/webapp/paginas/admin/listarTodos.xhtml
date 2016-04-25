@@ -25,56 +25,50 @@
 
 			<br />
 
-			<p:panel header="Usuário Cadastrados"
-				style="width: 30%; text-align:center; margin: auto;">
+			<p:dataTable id="tabela" var="administrador" value="#{index.users}"
+				emptyMessage="Nenhum registro encontrado.">
 
+				<p:column>
+					<f:facet name="header">ID</f:facet>
+					<p:outputLabel value="#{administrador.id}" />
+				</p:column>
 
-				<p:dataTable id="tabela" var="administrador" value="#{index.users}"
-					emptyMessage="Nenhum registro encontrado.">
+				<p:column>
+					<f:facet name="header">Primeiro Nome</f:facet>
+					<p:outputLabel value="#{administrador.firstName}" />
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">ID</f:facet>
-						<p:outputLabel value="#{administrador.id}" />
-					</p:column>
+				<p:column>
+					<f:facet name="header">Sobrenome</f:facet>
+					<p:outputLabel value="#{administrador.lastName}" />
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">Primeiro Nome</f:facet>
-						<p:outputLabel value="#{administrador.firstName}" />
-					</p:column>
+				<p:column>
+					<f:facet name="header">Grupo</f:facet>
+					<p:outputLabel value="#{administrador.grupo}" />
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">Sobrenome</f:facet>
-						<p:outputLabel value="#{administrador.lastName}" />
-					</p:column>
+				<p:column>
+					<f:facet name="header">E-Mail</f:facet>
+					<p:outputLabel value="#{administrador.email}" />
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">Grupo</f:facet>
-						<p:outputLabel value="#{administrador.grupo}" />
-					</p:column>
+				<p:column>
+					<f:facet name="header">Editar</f:facet>
+					<p:link outcome="editarAdministrador.xhtml"
+						value="Editar Administrador">
+						<f:param name="administrador" value="#{tarefa.id}" />
+					</p:link>
+				</p:column>
 
-					<p:column>
-						<f:facet name="header">E-Mail</f:facet>
-						<p:outputLabel value="#{administrador.email}" />
-					</p:column>
-
-					<p:column>
-						<f:facet name="header">Editar</f:facet>
-						<p:link outcome="editarAdministrador.xhtml"
-							value="Editar Administrador">
-							<f:param name="administrador" value="#{tarefa.id}" />
-						</p:link>
-					</p:column>
-
-					<p:column>
-						<f:facet name="header">Deletar</f:facet>
-						<p:link outcome="removeAdministrador.xhtml"
-							value="Deletar Administrador">
-							<f:param name="administrador" value="#{tarefa.id}" />
-						</p:link>
-					</p:column>
-				</p:dataTable>
-
-			</p:panel>
+				<p:column>
+					<f:facet name="header">Deletar</f:facet>
+					<p:link outcome="removeAdministrador.xhtml"
+						value="Deletar Administrador">
+						<f:param name="administrador" value="#{tarefa.id}" />
+					</p:link>
+				</p:column>
+			</p:dataTable>
 		</div>
 	</ui:define>
 
