@@ -9,9 +9,6 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/WEB-INF/templates/_template.xhtml">
-	<f:metadata>
-		<!-- o:viewParam name="id" value="#{#}" /-->
-	</f:metadata>
 
 	<ui:define name="titulo">Cadastro de Aluno</ui:define>
 
@@ -30,44 +27,41 @@
 
 					<p:outputLabel value="Primeiro Nome" for="primeiroNome" />
 					<p:inputText id="primeiroNome"
-						value="#{cadastroDeAlunoBean.aluno.firstName}"
-						required="true" cols="40" rows="4" autoResize="false" />
+						value="#{cadastroDeAlunoBean.aluno.firstName}" required="true"
+						cols="40" rows="4" autoResize="false" />
 
 					<p:outputLabel value="Sobrenome" for="sobrenome" />
 					<p:inputText id="sobrenome"
-						value="#{cadastroDeAlunoBean.aluno.lastName}"
-						required="true" cols="40" rows="4" autoResize="false" />
+						value="#{cadastroDeAlunoBean.aluno.lastName}" required="true"
+						cols="40" rows="4" autoResize="false" />
 
 					<p:outputLabel value="Matrícula" for="matricula" />
 					<p:inputText id="matricula"
-						value="#{cadastroDeAlunoBean.aluno.matricula}"
-						required="true" cols="40" rows="4" autoResize="false" />
+						value="#{cadastroDeAlunoBean.aluno.matricula}" required="true"
+						cols="40" rows="4" autoResize="false" />
 
 					<p:outputLabel value="E-Mail" for="email" />
-					<p:inputText id="email"
-						value="#{cadastroDeAlunoBean.aluno.email}"
+					<p:inputText id="email" value="#{cadastroDeAlunoBean.aluno.email}"
 						required="true" cols="40" rows="4" autoResize="false" />
 
 					<p:outputLabel for="curso" value="Curso" />
 					<p:selectOneMenu id="curso"
-						value="#{cadastroDeAlunoBean.aluno.curso}"
-						required="true">
+						value="#{cadastroDeAlunoBean.aluno.curso}" required="true">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItems value="#{cadastroDeAlunoBean.cursos}"
-							var="professorItem" itemLabel="#{professorItem}"
-							itemValue="#{professorItem}" />
+							var="cursoItem" itemLabel="#{cursoItem.sigla}"
+							itemValue="#{cursoItem.sigla}" />
 					</p:selectOneMenu>
 
 					<f:facet name="footer">
 						<p:commandButton id="submit"
-							action="#{cadastroDeAlunoBean.salvar}"
-							value="Submit" icon="ui-icon-disk" />
+							action="#{cadastroDeAlunoBean.salvar}" value="Submit"
+							icon="ui-icon-disk" />
 
 						<p:button id="cancelar" outcome="/paginas/index.xhtml"
 							value="Cancelar" icon="ui-icon-cancel" />
 
 					</f:facet>
-
 				</p:panelGrid>
 			</p:panel>
 		</h:form>

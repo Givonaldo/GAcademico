@@ -20,7 +20,7 @@
 	<h:form>
 		<p:menubar style="margin-top: -20px; margin-bottom: 20px">
 		
-			<p:submenu label="Consultas" icon="ui-icon-search">
+			<p:submenu label="Módulos" icon="ui-icon-search">
 				<p:menuitem value="Aluno" icon="ui-icon-triangle-1-se" action="/paginas/alunos/paginaPrincipalAluno?faces-redirect=true" />
 				<p:menuitem value="Professor" icon="ui-icon-triangle-1-se" action="/paginas/professores/paginaPrincipalProfessor?faces-redirect=true" />
 				<p:menuitem value="Administrador" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaPrincipalAdministrador?faces-redirect=true" />
@@ -36,12 +36,12 @@
 				<p:menuitem value="Listar Todos" icon="ui-icon-triangle-1-se" action="/paginas/admin/listarTodos?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Aluno" icon="ui-icon-person">
-				<p:menuitem value="Boletim" icon="ui-icon-triangle-1-se"  action="#?faces-redirect=true" />
+				<p:menuitem value="Boletim" icon="ui-icon-triangle-1-se"  action="/paginas/alunos/boletim?faces-redirect=true" />
 				<p:menuitem value="Disciplinas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
-				<p:menuitem value="Horario Individual" icon="ui-icon-triangle-1-se"	action="#?faces-redirect=true" />
-				<p:menuitem value="Historico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
-				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
-				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Horario Individual" icon="ui-icon-triangle-1-se"	action="/paginas/alunos/horarioIndividual?faces-redirect=true" />
+				<p:menuitem value="Historico" icon="ui-icon-triangle-1-se" action="/paginas/alunos/historico?faces-redirect=true" />
+				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="/paginas/alunos/matrizCurricular?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="/paginas/alunos/calendarioAcademico?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Professor" icon="ui-icon-person">
 				<p:menuitem value="Aulas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
@@ -60,7 +60,7 @@
 		<ui:insert name="content" />
 	</div>
 
-	<footer> 	G-Acadêmico - v1.0	</footer>
+	<!-- <footer> 	G-Acadêmico - v1.0	</footer>  -->
 
 </h:body>
 </html>

@@ -40,6 +40,7 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	
 	public String salvar(){
 		try {
+			service.criptografarSenha(aluno);
 			service.save(aluno);
 		} catch (DacaServiceException e) {
 			e.printStackTrace();

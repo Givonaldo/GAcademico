@@ -13,13 +13,15 @@
 	<ui:define name="titulo">Usuários Cadastrados</ui:define>
 
 	<ui:define name="content">
-		
-		<h:form><h2>Usuários Cadastrados</h2></h:form>
-		
+
+		<h:form style="width: 30%; text-align:center; margin: auto;">
+			<h2>Usuários Cadastrados</h2>
+		</h:form>
+
 		<div id="tabela">
 
 			<p:messages id="messages" />
-			
+
 			<br />
 
 			<h:form>
@@ -75,10 +77,18 @@
 						<f:facet name="header">E-Mail</f:facet>
 						<p:outputLabel value="#{administrador.email}" />
 					</p:column>
-					
+
+					<p:column headerText="Delete">
+						<p:link id="linkDeleteUser" outcome="/paginas/admin/removerUser.xhtml"
+							value="Delete Usuário">
+							<f:param name="administrador" value="#{administrador.id}" />
+						</p:link>
+					</p:column>
+
+
 				</p:dataTable>
 
-				<h3>Export Page Data Only</h3>
+
 				<h:commandLink>
 					<p:graphicImage library="imagens" name="excel.png" />
 					<p:dataExporter type="xls" target="tbl" fileName="users"

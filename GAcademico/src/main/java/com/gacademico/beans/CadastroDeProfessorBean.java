@@ -28,6 +28,7 @@ public class CadastroDeProfessorBean extends AbstractBean {
 	public String salvar(){
 		professor.setGrupo(Grupo.PROFESSOR);
 		try {
+			professorService.criptografarSenha(professor);
 			professorService.save(professor);
 		} catch (DacaServiceException e) {
 			e.printStackTrace();

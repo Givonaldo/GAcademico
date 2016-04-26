@@ -1,5 +1,6 @@
 package com.gacademico.beans;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,6 +19,7 @@ public class CadastroDeCursoBean extends AbstractBean {
 	
 	private Curso curso;
 	
+	@PostConstruct
 	public void init(){
 		curso = new Curso();
 	}

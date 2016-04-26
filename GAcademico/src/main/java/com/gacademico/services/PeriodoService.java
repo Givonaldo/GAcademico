@@ -36,5 +36,4 @@ public class PeriodoService implements Serializable {
 	public List<Periodo> getAll() throws DacaServiceException {
 		return this.periodoDAO.getAll();
 	}
-
 }
