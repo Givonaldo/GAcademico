@@ -22,6 +22,9 @@ public class Curso {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="CURSO_SEQUENCE")
 	private Long idCurso;
 	
+	@Column(name = "CL_SIGLAS")
+	private String sigla;
+	
 	@Column(name = "CL_NOMES_DOS_CURSOS")
 	private String nomeDoCurso;
 
@@ -39,6 +42,14 @@ public class Curso {
 
 	public void setNomeDoCurso(String nomeDoCurso) {
 		this.nomeDoCurso = nomeDoCurso;
+	}
+	
+	public String getSigla() {
+		return sigla;
+	}
+	
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
 	}
 	
 	@Override

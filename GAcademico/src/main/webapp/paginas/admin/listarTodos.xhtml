@@ -9,63 +9,101 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/WEB-INF/templates/_template.xhtml">
-	<f:metadata>
-		<!-- o:viewParam name="id" value="#{#}" /-->
-	</f:metadata>
 
-	<ui:define name="titulo">Cadastro de Pessoas</ui:define>
+	<ui:define name="titulo">Usuários Cadastrados</ui:define>
 
 	<ui:define name="content">
-
+		
+		<h:form><h2>Usuários Cadastrados</h2></h:form>
+		
 		<div id="tabela">
-			<p:messages id="messages" />
 
+			<p:messages id="messages" />
+			
 			<br />
 
-			<p:dataTable id="tabela" var="administrador" value="#{index.users}"
-				emptyMessage="Nenhum registro encontrado.">
+			<h:form>
 
-				<p:column>
-					<f:facet name="header">Identificador</f:facet>
-					<p:outputLabel value="#{administrador.id}" />
-				</p:column>
+				<p:dataTable id="tbl" var="administrador" value="#{index.users}"
+					emptyMessage="Nenhum registro encontrado."
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+					paginator="true" rows="10" style="margin-bottom:20px">
 
-				<p:column>
-					<f:facet name="header">Primeiro Nome</f:facet>
-					<p:outputLabel value="#{administrador.firstName}" />
-				</p:column>
+					<f:facet name="{Exporters}">
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="excel.png" width="24" />
+							<p:dataExporter type="xls" target="tbl" fileName="users" />
+						</h:commandLink>
 
-				<p:column>
-					<f:facet name="header">Sobrenome</f:facet>
-					<p:outputLabel value="#{administrador.lastName}" />
-				</p:column>
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="pdf.png" width="24" />
+							<p:dataExporter type="pdf" target="tbl" fileName="users" />
+						</h:commandLink>
 
-				<p:column>
-					<f:facet name="header">Grupo</f:facet>
-					<p:outputLabel value="#{administrador.grupo}" />
-				</p:column>
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="csv.png" width="24" />
+							<p:dataExporter type="csv" target="tbl" fileName="users" />
+						</h:commandLink>
 
-				<p:column>
-					<f:facet name="header">E-Mail</f:facet>
-					<p:outputLabel value="#{administrador.email}" />
-				</p:column>
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="xml.png" width="24" />
+							<p:dataExporter type="xml" target="tbl" fileName="users" />
+						</h:commandLink>
+					</f:facet>
 
-				<p:column>
-					<f:facet name="header">Editar</f:facet>
-					<p:link outcome="editarAdministrador.xhtml"
-						value="Editar">
-						<f:param name="administrador" value="#{tarefa.id}" />
-					</p:link>
-				</p:column>
+					<p:column>
+						<f:facet name="header">Identificador</f:facet>
+						<p:outputLabel value="#{administrador.id}" />
+					</p:column>
 
-				<p:column>
-					<f:facet name="header">Deletar</f:facet>
-					<p:link outcome="removeAdministrador.xhtml"
-						value="Deletar">
-						<f:param name="administrador" value="#{tarefa.id}" />
-					</p:link>
-				</p:column>
-			</p:dataTable>
+					<p:column>
+						<f:facet name="header">Primeiro Nome</f:facet>
+						<p:outputLabel value="#{administrador.firstName}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Sobrenome</f:facet>
+						<p:outputLabel value="#{administrador.lastName}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Grupo</f:facet>
+						<p:outputLabel value="#{administrador.grupo}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">E-Mail</f:facet>
+						<p:outputLabel value="#{administrador.email}" />
+					</p:column>
+					
+				</p:dataTable>
+
+				<h3>Export Page Data Only</h3>
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="excel.png" />
+					<p:dataExporter type="xls" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="csv.png" />
+					<p:dataExporter type="csv" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="xml.png" />
+					<p:dataExporter type="xml" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+			</h:form>
 		</div>
 	</ui:define>
 

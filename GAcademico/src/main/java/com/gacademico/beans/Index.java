@@ -3,6 +3,8 @@ package com.gacademico.beans;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -16,7 +18,7 @@ import com.gacademico.services.ProfessorService;
 import com.gacademico.services.UserService;
 
 @Named
-@RequestScoped
+@ViewScoped
 public class Index extends AbstractBean {
 	
 	private static final long serialVersionUID = -4341438765228072955L;
@@ -27,6 +29,7 @@ public class Index extends AbstractBean {
 	private List<Aluno> alunos;
 	
 	@Inject
+	@ManagedProperty("#{userService}")
 	private UserService userService;
 	
 	@Inject

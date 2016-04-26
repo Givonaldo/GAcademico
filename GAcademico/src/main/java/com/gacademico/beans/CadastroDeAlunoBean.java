@@ -20,8 +20,12 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	
 	@Inject
 	private AlunoService service;
+	
 	private List<Curso> cursos;
+	
 	private Aluno aluno;
+	
+	@Inject
 	private CursoService cursoService;
 	
 	@PostConstruct
