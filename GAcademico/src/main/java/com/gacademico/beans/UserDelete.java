@@ -12,9 +12,6 @@ import com.gacademico.services.UserService;
 @ViewScoped
 public class UserDelete extends AbstractBean {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4804260264032468336L;
 
 	private User user;

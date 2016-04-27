@@ -24,7 +24,8 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 	@Inject
 	private DisciplinaService serviceDisciplina;
 	
-	private List<Professor> professores; 
+	private List<Professor> professores;
+	private List<Disciplina> disciplinasCadastradas;
 	private List<String> disciplinas;
 	private List<String> listaDeDisciplinasSelecionadas;
 	private DualListModel<String> listaDeDisciplinas;
@@ -44,6 +45,7 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 		listaDeDisciplinasSelecionadas = new ArrayList<>();
 		disciplinas = new ArrayList<>();
 		try {
+			disciplinasCadastradas = serviceDisciplina.getAll();
 			for(Disciplina d : serviceDisciplina.getAll()){
 				disciplinas.add(d.getNome());
 			}
@@ -121,5 +123,12 @@ public class CadastroDeDisciplinaBean extends AbstractBean {
 		return serviceProfessor;
 	}
 	
+	public List<Disciplina> getDisciplinasCadastradas() {
+		return disciplinasCadastradas;
+	}
+	
+	public void setDisciplinasCadastradas(List<Disciplina> disciplinasCadastradas) {
+		this.disciplinasCadastradas = disciplinasCadastradas;
+	}
 	
 }

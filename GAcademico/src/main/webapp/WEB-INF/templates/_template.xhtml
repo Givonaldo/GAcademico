@@ -29,7 +29,7 @@
 				<p:submenu label="Cadastrar Usuário" icon="ui-icon-triangle-1-se" >
 					<p:menuitem value="Cadastrar Professor" icon="ui-icon-triangle-1-se" action="/paginas/admin/cadastroDeProfessor?faces-redirect=true" />
 					<p:menuitem value="Cadastrar Aluno" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeAluno?faces-redirect=true" />
-					<p:menuitem value="Cadastrar Administrador" icon="ui-icon-triangle-1-se" action="/paginas/admin/#?faces-redirect=true" />
+					<p:menuitem value="Cadastrar Administrador" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeAdministrador?faces-redirect=true" />
 					<p:menuitem value="Listar Todos os Usuários" icon="ui-icon-triangle-1-se" action="/paginas/admin/listarTodos?faces-redirect=true" />
 				</p:submenu>
 				<p:menuitem value="Cadastrar Curso" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeCurso?faces-redirect=true" />
@@ -43,13 +43,13 @@
 				<p:menuitem value="Horario Individual" icon="ui-icon-triangle-1-se"	action="/paginas/aluno/horarioIndividual?faces-redirect=true" />
 				<p:menuitem value="Historico" icon="ui-icon-triangle-1-se" action="/paginas/aluno/historico?faces-redirect=true" />
 				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="/paginas/aluno/matrizCurricular?faces-redirect=true" />
-				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="/paginas/aluno/calendarioAcademico?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="/paginas/calendarioAcademico?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Professor" icon="ui-icon-person">
 				<p:menuitem value="Aulas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
 				<p:menuitem value="Disciplinas" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
 				<p:menuitem value="Matriz Curricular" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
-				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="#?faces-redirect=true" />
+				<p:menuitem value="Calendário Acadêmico" icon="ui-icon-triangle-1-se" action="/paginas/calendarioAcademico?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Sistema" icon="ui-icon-gear">
 				<p:menuitem value="Tela Inicial" icon="ui-icon-home" action="/paginas/index?faces-redirect=true" />
@@ -61,8 +61,6 @@
 	<div id="content">
 		<ui:insert name="content" />
 	</div>
-
-	<!-- <footer> 	G-Acadêmico - v1.0	</footer>  -->
 
 </h:body>
 </html>

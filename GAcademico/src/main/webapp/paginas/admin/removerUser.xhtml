@@ -9,29 +9,26 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/WEB-INF/templates/_template.xhtml">
-
 	<f:metadata>
 		<o:viewParam name="user" value="#{userDelete.user}"
 			converter="#{userConverter}" />
 	</f:metadata>
-
 	<ui:define name="title">
-		Apagar Usuário
+		User delete
 	</ui:define>
-
 	<ui:define name="content">
-		<h:form style="width: 30%; text-align:center; margin: auto;">
+		<h:form>
 			<p:panelGrid columns="1">
 				<f:facet name="header">
 				Confirmação!
 			</f:facet>
 				<h:outputLabel
-					value="Deseja deletar '#{userDelete.user.firstName} #{userDelete.user.lastName}'?" />
+					value="Tem certeza que deseja deletar '#{userDelete.user.firstName} #{userDelete.user.lastName}'?" />
 				<f:facet name="footer">
-					<p:commandButton id="btnDelete" action="#{userDelete.delete}"
-						value="Deletar" icon="ui-icon-close" />
-					<p:commandButton id="btnCancel" action="#{userDelete.cancel}"
-						value="Cancelar" icon="ui-icon-cancel" />
+					<p:commandButton id="btnDelete" action="#{userDelete.delete}" value="Delete"
+						icon="ui-icon-close" />
+					<p:commandButton id="btnCancel" action="#{userDelete.cancel}" value="Cancel"
+						icon="ui-icon-cancel" />
 				</f:facet>
 			</p:panelGrid>
 		</h:form>

@@ -27,6 +27,7 @@ public class CadastroDePeriodoBean extends AbstractBean {
 	public String salvar(){
 		try {
 			service.save(periodo);
+			reportarMensagemDeSucesso("Período Salvo com sucesso!");
 		} catch (DacaServiceException e) {
 			e.printStackTrace();
 		}
