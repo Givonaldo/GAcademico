@@ -5,6 +5,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import com.gacademico.entities.Administrador;
+import com.gacademico.entities.Grupo;
 import com.gacademico.services.AdministradorService;
 import com.gacademico.services.DacaServiceException;
 
@@ -25,7 +26,7 @@ public class CadastroDeAdministrador extends AbstractBean {
 	}
 	
 	public String salvar(){
-		
+		adm.setGrupo(Grupo.ADMIN);
 		try {
 			service.criptografarSenha(adm);
 			service.save(adm);

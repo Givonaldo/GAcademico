@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import com.gacademico.entities.Aluno;
 import com.gacademico.entities.Curso;
+import com.gacademico.entities.Grupo;
 import com.gacademico.services.AlunoService;
 import com.gacademico.services.CursoService;
 import com.gacademico.services.DacaServiceException;
@@ -39,6 +40,7 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	}
 	
 	public String salvar(){
+		aluno.setGrupo(Grupo.ALUNO);
 		try {
 			service.criptografarSenha(aluno);
 			service.save(aluno);
@@ -63,5 +65,14 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
 	}
+	
+	public CursoService getCursoService() {
+		return cursoService;
+	}
+	
+	public void setCursoService(CursoService cursoService) {
+		this.cursoService = cursoService;
+	}
+	
 	
 }

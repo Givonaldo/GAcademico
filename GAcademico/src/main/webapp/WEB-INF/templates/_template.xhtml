@@ -14,7 +14,7 @@
 
 	<header>
 		<h:graphicImage library="imagens" name="logo.png" />	
-		<div style="float: right; margin-right: 20px; margin-top: 10px"> Olá </div>
+		<div style="float: right; margin-right: 20px; margin-top: 10px"> Olá #{index.usuarioAtual} </div>
 	</header>
 
 	<h:form>
@@ -29,11 +29,13 @@
 				<p:submenu label="Cadastrar Usuário" icon="ui-icon-triangle-1-se" >
 					<p:menuitem value="Cadastrar Professor" icon="ui-icon-triangle-1-se" action="/paginas/admin/cadastroDeProfessor?faces-redirect=true" />
 					<p:menuitem value="Cadastrar Aluno" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeAluno?faces-redirect=true" />
-					<p:menuitem value="Cadastrar Curso" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeCurso?faces-redirect=true" />
+					<p:menuitem value="Cadastrar Administrador" icon="ui-icon-triangle-1-se" action="/paginas/admin/#?faces-redirect=true" />
+					<p:menuitem value="Listar Todos os Usuários" icon="ui-icon-triangle-1-se" action="/paginas/admin/listarTodos?faces-redirect=true" />
 				</p:submenu>
+				<p:menuitem value="Cadastrar Curso" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeCurso?faces-redirect=true" />
 				<p:menuitem value="Cadastrar Período" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDePeriodo?faces-redirect=true" />
 				<p:menuitem value="Cadastrar Disciplina" icon="ui-icon-triangle-1-se" action="/paginas/admin/paginaCadastroDeDisciplinas?faces-redirect=true" />
-				<p:menuitem value="Listar Todos" icon="ui-icon-triangle-1-se" action="/paginas/admin/listarTodos?faces-redirect=true" />
+				
 			</p:submenu>
 			<p:submenu label="Aluno" icon="ui-icon-person">
 				<p:menuitem value="Boletim" icon="ui-icon-triangle-1-se"  action="/paginas/alunos/boletim?faces-redirect=true" />

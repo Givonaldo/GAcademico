@@ -6,10 +6,11 @@
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Curso.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Disciplina.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/AdministradorDAO.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/HorarioIndividualBean.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/services/AlunoService.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/dao/ProfessorDAO.java
-/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/Logout.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/entities/Periodo.java
+/home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/Logout.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/CadastroDeAdministrador.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/services/ProfessorService.java
 /home/gilvonaldo/MEGA/IFPB/DACA/Projeto da Disciplina/GAcademico/src/main/java/com/gacademico/beans/CadastroDeCursoBean.java

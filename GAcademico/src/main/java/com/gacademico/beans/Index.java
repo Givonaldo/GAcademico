@@ -1,9 +1,12 @@
 package com.gacademico.beans;
 
+import java.security.Principal;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,6 +30,7 @@ public class Index extends AbstractBean {
 	
 	private List<Professor> professores;
 	private List<Aluno> alunos;
+	private String usuarioAtual;
 	
 	@Inject
 	@ManagedProperty("#{userService}")
@@ -44,9 +48,7 @@ public class Index extends AbstractBean {
 	
 	public List<Professor> getProfessores() {
 		return professores;
-	}
-	
-	
+	}	
 	
 	public String getFirstNameFiltro() {
 		return firstNameFiltro;
@@ -59,6 +61,7 @@ public class Index extends AbstractBean {
 	@PostConstruct
 	public void init() {
 		filtrar();
+		usuarioAtual = getUserLogin();
 	}
 	
 	public void filtrar() {
@@ -69,8 +72,33 @@ public class Index extends AbstractBean {
 		}
 	}
 
+	public String getUserLogin() {
+		
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		Principal userPrincipal = externalContext.getUserPrincipal();
+		
+		if (userPrincipal == null) {
+			return "";
+		}
+		
+		return userPrincipal.getName();
+	}
+	
 	public void limpar() {
 		firstNameFiltro = null;
+	}
+	
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+	
+	public String getUsuarioAtual() {
+		return usuarioAtual;
+	}
+	
+	public void setUsuarioAtual(String usuarioAtual) {
+		this.usuarioAtual = usuarioAtual;
 	}
 	
 }

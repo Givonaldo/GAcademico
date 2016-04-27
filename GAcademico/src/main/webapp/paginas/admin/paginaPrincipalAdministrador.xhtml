@@ -9,6 +9,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/WEB-INF/templates/_template.xhtml">
+
 	<ui:define name="content">
 		<p:panel header="G-Acadêmico"
 			style="width: 30%; text-align:center; margin: auto;">
@@ -21,6 +22,14 @@
 					de poucos cliques.</h3>
 			</div>
 		</p:panel>
+		
+		<p:dock position="bottom">
+    		<p:menuitem value="Alterações de Dados Cadastrais" icon="/resources/imagens/senha.gif" url="/paginas/admin/#?faces-redirect=true"/>
+    		<p:menuitem value="Consultar Alunos" icon="/resources/imagens/aluno.gif" url="/paginas/admin/#?faces-redirect=true"/>
+    		<p:menuitem value="Consultar Professores" icon="/resources/imagens/professor.gif" url="/paginas/admin/#?faces-redirect=true"/>
+    		<p:menuitem value="Consultar Administradores" icon="/resources/imagens/administrador.gif" url="/paginas/admin/#?faces-redirect=true"/>
+		</p:dock>
+		
 	</ui:define>
 
 </ui:composition>

@@ -14,8 +14,23 @@
 		Horário Individual
 	</ui:define>
 
-	
+	<ui:define name="content">
 
+		<h:form>
+			<p:growl id="messages" showDetail="true" />
+
+			<h:panelGrid columnClasses="value">
+
+				<h3 style="margin-top: 0">Editable Schedule</h3>
+
+				<p:schedule id="schedule" value="#{#}"
+					widgetVar="myschedule" timeZone="GMT+2">
+
+				</p:schedule>
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
 </ui:composition>
 
 </html>

@@ -46,12 +46,29 @@
 
 					<p:outputLabel for="curso" value="Curso" />
 					<p:selectOneMenu id="curso"
-						value="#{cadastroDeAlunoBean.aluno.curso}" required="true">
+						value="#{cadastroDeAlunoBean.aluno.curso}" required="false">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItems value="#{cadastroDeAlunoBean.cursos}"
 							var="cursoItem" itemLabel="#{cursoItem.sigla}"
 							itemValue="#{cursoItem.sigla}" />
 					</p:selectOneMenu>
+
+					<p:outputLabel value="Login" for="login" />
+					<p:inputText id="login"
+						value="#{cadastroDeAlunoBean.aluno.login}" required="true"
+						cols="40" rows="4" autoResize="false" />
+
+					<p:outputLabel for="itSenha" value="Senha" />
+					<p:password id="itSenha"
+						value="#{cadastroDeAlunoBean.aluno.password}"
+						match="itConfirmacaoSenha" feedback="true" redisplay="true"
+						required="true" />
+					
+					<p:outputLabel for="itConfirmacaoSenha"
+						value="Confirmação da Senha" />
+					<p:password id="itConfirmacaoSenha"
+						value="#{cadastroDeAlunoBean.aluno.password}"
+						feedback="true" redisplay="true" required="true" />
 
 					<f:facet name="footer">
 						<p:commandButton id="submit"
