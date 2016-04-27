@@ -8,26 +8,13 @@
 	xmlns:of="http://omnifaces.org/functions"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="/WEB-INF/templates/__commonLayout.xhtml">
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>LOGIN</title>
+</h:head>
 
-	<ui:define name="title">
-			G-ACADEMICO - LOGIN
-	</ui:define>
-
-	<ui:define name="header">
-		<p:panel columns="1" style="width : 100%; text-align:center">
-			<p:link outcome="/paginas/index?faces-redirect=true"
-				value="Cabeçalho da Minha Aplicação" />
-		</p:panel>
-	</ui:define>
-
-	<ui:define name="corpo">
-
-		<p:growl id="messages" autoUpdate="true" showDetail="true"
-			showSummary="true" />
-
-		<p:panel header="Login"
-			style="width: 30%; text-align:center; margin: auto;">
+<h:body>
+	<p:growl showDetail="true" sticky="true" life="5000" />
 
 			<h:form id="formLogin" prependId="false" styleClass="center-hv"
 				onsubmit="action='j_security_check';">
@@ -47,9 +34,5 @@
 				</h:panelGrid>
 
 			</h:form>
-		</p:panel>
-	</ui:define>
-
-</ui:composition>
-
+</h:body>
 </html>

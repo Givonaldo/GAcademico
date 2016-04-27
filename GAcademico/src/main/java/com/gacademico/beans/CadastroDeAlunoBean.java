@@ -1,7 +1,6 @@
 package com.gacademico.beans;
 
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -21,7 +20,7 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	
 	@Inject
 	private AlunoService service;
-	
+	private List<Aluno> alunos;
 	private List<Curso> cursos;
 	
 	private Aluno aluno;
@@ -33,6 +32,7 @@ public class CadastroDeAlunoBean extends AbstractBean {
 	public void userInit(){
 		aluno = new Aluno();
 		try {
+			alunos = service.getAll();
 			cursos = cursoService.getAll();
 		} catch (DacaServiceException e) {
 			e.printStackTrace();
@@ -49,6 +49,8 @@ public class CadastroDeAlunoBean extends AbstractBean {
 		}
 		return EnderecoPaginas.PAGINA_PRINCIPAL;
 	}
+
+	
 	
 	public Aluno getAluno() {
 		return aluno;
@@ -74,5 +76,12 @@ public class CadastroDeAlunoBean extends AbstractBean {
 		this.cursoService = cursoService;
 	}
 	
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+	
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
+	}
 	
 }

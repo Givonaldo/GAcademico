@@ -75,3 +75,12 @@ h1 {
 	font-weight: bold;
 	
 }
+
+.grid-login {
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+	width: 100%
+}

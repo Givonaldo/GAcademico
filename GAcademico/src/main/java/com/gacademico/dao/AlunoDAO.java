@@ -81,7 +81,7 @@ public class AlunoDAO extends DAO {
 		EntityManager em = getEntityManager();
 		List<Aluno> resultado = null;
 		try {
-			TypedQuery<Aluno> query = em.createQuery("SELECT a FROM Aluno a", Aluno.class);
+			TypedQuery<Aluno> query = em.createQuery("SELECT a FROM ALUNO a", Aluno.class);
 			resultado = query.getResultList();
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
