@@ -1,5 +1,7 @@
 package com.gacademico.beans;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -19,10 +21,16 @@ public class CadastroDeAdministrador extends AbstractBean {
 	private AdministradorService service;
 	private Long idAdm;
 	private Administrador adm;
+	private List<Administrador> administradores;
 	
 	@PostConstruct
 	public void init(){
 		adm = new Administrador();
+		try {
+			administradores = service.getAll();
+		} catch (DacaServiceException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public String salvar(){
@@ -52,6 +60,14 @@ public class CadastroDeAdministrador extends AbstractBean {
 	
 	public void setAdm(Administrador adm) {
 		this.adm = adm;
+	}
+	
+	public List<Administrador> getAdministradores() {
+		return administradores;
+	}
+	
+	public void setAdministradores(List<Administrador> administradores) {
+		this.administradores = administradores;
 	}
 	
 }

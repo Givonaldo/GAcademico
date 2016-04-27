@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/_template.xhtml">
+
+	<ui:define name="titulo">Administradores Cadastrados</ui:define>
+
+	<ui:define name="content">
+
+		<h:form style="width: 30%; text-align:center; margin: auto;">
+			<h2 style="font-family: verdana;" >Administradores Cadastrados</h2>
+		</h:form>
+
+		<div id="tabela">
+
+			<p:messages id="messages" />
+
+			<br />
+
+			<h:form>
+
+				<p:dataTable id="tbl" var="administrador" value="#{cadastroDeAdministrador.administradores}"
+					emptyMessage="Nenhum registro encontrado."
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+					paginator="true" rows="10" style="margin-bottom:20px">
+
+					<f:facet name="{Exporters}">
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="excel.png" width="24" />
+							<p:dataExporter type="xls" target="tbl" fileName="users" />
+						</h:commandLink>
+
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="pdf.png" width="24" />
+							<p:dataExporter type="pdf" target="tbl" fileName="users" />
+						</h:commandLink>
+
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="csv.png" width="24" />
+							<p:dataExporter type="csv" target="tbl" fileName="users" />
+						</h:commandLink>
+
+						<h:commandLink>
+							<p:graphicImage library="imagens" name="xml.png" width="24" />
+							<p:dataExporter type="xml" target="tbl" fileName="users" />
+						</h:commandLink>
+					</f:facet>
+
+					<p:column>
+						<f:facet name="header">Identificador</f:facet>
+						<p:outputLabel value="#{administrador.id}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Primeiro Nome</f:facet>
+						<p:outputLabel value="#{administrador.firstName}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Sobrenome</f:facet>
+						<p:outputLabel value="#{administrador.lastName}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Grupo</f:facet>
+						<p:outputLabel value="#{administrador.grupo}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">E-Mail</f:facet>
+						<p:outputLabel value="#{administrador.email}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">E-Mail</f:facet>
+						<p:outputLabel value="#{administrador.curso.sigla}" />
+					</p:column>
+
+					<p:column headerText="Delete">
+						<p:link id="linkDeleteUser" outcome="/paginas/admin/removerUser.xhtml"
+							value="Delete Usuário">
+							<f:param name="administrador" value="#{administrador.id}" />
+						</p:link>
+					</p:column>
+
+				</p:dataTable>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="excel.png" />
+					<p:dataExporter type="xls" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="csv.png" />
+					<p:dataExporter type="csv" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="imagens" name="xml.png" />
+					<p:dataExporter type="xml" target="tbl" fileName="users"
+						pageOnly="true" />
+				</h:commandLink>
+
+			</h:form>
+		</div>
+	</ui:define>
+
+</ui:composition>
+
+</html>

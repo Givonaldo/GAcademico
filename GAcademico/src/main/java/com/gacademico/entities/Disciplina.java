@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author gilvonaldo
  *
  */
-@Entity(name = "DICIPLINA")
+@Entity(name = "DISCIPLINA")
 @Table(name = "TB_DISCIPLINAS")
 @SequenceGenerator(name = "DISCIPLINA_SEQUENCE", sequenceName = "DISCIPLINA_SEQUENCE", allocationSize = 1, initialValue = 1)
 public class Disciplina implements Serializable {

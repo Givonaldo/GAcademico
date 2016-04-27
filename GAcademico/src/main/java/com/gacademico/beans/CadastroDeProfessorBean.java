@@ -1,5 +1,7 @@
 package com.gacademico.beans;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -18,11 +20,18 @@ public class CadastroDeProfessorBean extends AbstractBean {
 	@Inject
 	private ProfessorService professorService;
 	
+	private List<Professor> professores;
+	
 	private Professor professor;
 	
 	@PostConstruct
 	public void init(){
 		professor = new Professor();
+		try {
+			professores = professorService.getAll();
+		} catch (DacaServiceException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public String salvar(){
@@ -42,6 +51,14 @@ public class CadastroDeProfessorBean extends AbstractBean {
 	
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
+	}
+	
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+	
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
 	}
 	
 }
