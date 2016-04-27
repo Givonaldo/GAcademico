@@ -20,18 +20,18 @@
 			<p:growl id="messages" showDetail="true" />
 
 			<p:schedule id="schedule"
-				value="#{calancarioAcademicoBean.eventModel}" widgetVar="myschedule">
+				value="#{calendarioAcademicoBean.eventModel}" widgetVar="myschedule">
 
 				<p:ajax event="dateSelect"
-					listener="#{calancarioAcademicoBean.onDateSelect}"
+					listener="#{calendarioAcademicoBean.onDateSelect}"
 					update="eventDetails" oncomplete="PF('eventDialog').show()" />
 				<p:ajax event="eventSelect"
-					listener="#{calancarioAcademicoBean.onEventSelect}"
+					listener="#{calendarioAcademicoBean.onEventSelect}"
 					update="eventDetails" oncomplete="PF('eventDialog').show()" />
 				<p:ajax event="eventMove"
-					listener="#{calancarioAcademicoBean.onEventMove}" update="messages" />
+					listener="#{calendarioAcademicoBean.onEventMove}" update="messages" />
 				<p:ajax event="eventResize"
-					listener="#{calancarioAcademicoBean.onEventResize}"
+					listener="#{calendarioAcademicoBean.onEventResize}"
 					update="messages" />
 
 			</p:schedule>
@@ -41,28 +41,28 @@
 				<h:panelGrid id="eventDetails" columns="2">
 					<h:outputLabel for="title" value="Title:" />
 					<p:inputText id="title"
-						value="#{calancarioAcademicoBean.event.title}" required="true" />
+						value="#{calendarioAcademicoBean.event.title}" required="true" />
 
 					<h:outputLabel for="from" value="From:" />
 					<p:inputMask id="from"
-						value="#{calancarioAcademicoBean.event.startDate}"
+						value="#{calendarioAcademicoBean.event.startDate}"
 						mask="99/99/9999">
 						<f:convertDateTime pattern="dd/MM/yyyy" />
 					</p:inputMask>
 
 					<h:outputLabel for="to" value="To:" />
 					<p:inputMask id="to"
-						value="#{calancarioAcademicoBean.event.endDate}" mask="99/99/9999">
+						value="#{calendarioAcademicoBean.event.endDate}" mask="99/99/9999">
 						<f:convertDateTime pattern="dd/MM/yyyy" />
 					</p:inputMask>
 
 					<h:outputLabel for="allDay" value="All Day:" />
 					<h:selectBooleanCheckbox id="allDay"
-						value="#{calancarioAcademicoBean.event.allDay}" />
+						value="#{calendarioAcademicoBean.event.allDay}" />
 
 					<p:commandButton type="reset" value="Reset" />
 					<p:commandButton id="addButton" value="Save"
-						actionListener="#{calancarioAcademicoBean.addEvent}"
+						actionListener="#{calendarioAcademicoBean.addEvent}"
 						oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
 				</h:panelGrid>
 			</p:dialog>
